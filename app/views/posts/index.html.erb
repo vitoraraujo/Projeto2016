@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Projetos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Descrição</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.name %></td>
+        <td><%= post.description %></td>
+        <td><%= link_to 'Mostrar', post %></td>
+        <td><%= link_to 'Editar', edit_post_path(post) %></td>
+        <td><%= link_to 'Deletar', post, method: :delete, data: { confirm: 'Está certo disso?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Novo Projeto', new_post_path %>
+<br>
+(ta bugado)
