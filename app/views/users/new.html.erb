@@ -1,2 +1,6 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<% provide(:title, "Cadastrando") %>
+
+<h1>Cadastre-se!</h1>
+
+<%= render 'form' %>
+<%= link_to 'Voltar', posts_path %>
