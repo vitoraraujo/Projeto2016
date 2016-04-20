@@ -9,5 +9,9 @@
   <strong>Descrição:</strong>
   <%= @post.description %>
 </p>
+<p>
+  <strong>Detalhes:</strong>
+  <%= @post.detail %>
+</p>
 <%= link_to 'Editar', edit_post_path(@post) %> |
 <%= link_to 'Voltar', posts_path %>

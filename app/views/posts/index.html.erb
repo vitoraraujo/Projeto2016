@@ -4,30 +4,20 @@
 
 <h1>Projetos</h1>
 
-<center>
-<table>
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>Descrição</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.name %></td>
-        <td><%= post.description %></td>
-        <td><%= link_to 'Mostrar', post %></td>
-        <td><%= link_to 'Editar', edit_post_path(post) %></td>
-        <td><%= link_to 'Deletar', post, method: :delete, data: { confirm: 'Está certo disso?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<br>
-</center>
-<br>
-<%= link_to 'Novo Projeto', new_post_path %>
-<br>
+
+<% @posts.each do |post| %>
+  <div style="margin: 1em; border: 1px solid black; float: left; width: 300px; height: 300px; position: relative;">
+    <h2><%= post.name %></h2>
+    <%= post.description %> <br>
+    <div style="position: relative; top: 200px;">
+      <%= link_to 'Mostrar', post %>
+      <%= link_to 'Editar', edit_post_path(post) %>
+      <%= link_to 'Deletar', post, method: :delete, data: { confirm: 'Está certo disso?' } %>
+    </div>
+  </div>
+<% end %>
+
+<div style ="clear: both;">
+  <%= link_to 'Novo Projeto', new_post_path %>
+</div>
