@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-      <title><%= yield(:title) %> | Projetos </title>
+    <title><%= yield(:title) %> | Projetos </title>
 
    <STYLE type="text/css">
   	BODY {text-align: center}
@@ -11,9 +11,17 @@
   <%= csrf_meta_tags %>
  
 </head>
-<body>
-
-<%= yield %>
+<body background="http://www.redpepperwallpaper.com/wp/situations/WP3YAMBZ.jpg" >
+<div style ="border: 1px solid white; position: relative; height: 85px;">
+	<img src="https://lh3.googleusercontent.com/mMYecF7onM0XVMADobSvqVBCVWnvscXxgnZKM3lbDfTUNHXFKCry14h0EJK2Z5dbVkEiFQ=s85" align="middle">
+	<img src="https://lh3.googleusercontent.com/8IwwW8s3i0RPilwK07mPG9guqBZ3lrgJP_OnL1wrFUD-w4l6w0535FuCvhOlQhbuy4GVzg=s170" align="middle" style="width:200px;height:60px;" >
+	
+	<div style=" position: absolute; top: 60px; right: 20px;">
+		<%= link_to "Home", root_path%>
+		<%= link_to "Cadastre-se", new_user_path%>
+	</div>
+</div>
+<font color="white"><%= yield %></font>
 
 </body>
 </html>
