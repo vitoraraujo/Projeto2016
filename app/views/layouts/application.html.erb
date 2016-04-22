@@ -5,6 +5,9 @@
 
    <STYLE type="text/css">
   	BODY {text-align: center}
+  	div.links{
+    color: white; 
+    }
   </STYLE>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -12,20 +15,32 @@
  
 </head>
 <body background="http://www.redpepperwallpaper.com/wp/situations/WP3YAMBZ.jpg" >
-
 <div style ="border: 2px solid white; position: relative; height: 85px;">
 	<img src="https://lh3.googleusercontent.com/mMYecF7onM0XVMADobSvqVBCVWnvscXxgnZKM3lbDfTUNHXFKCry14h0EJK2Z5dbVkEiFQ=s85" align="middle">&nbsp;&nbsp;
 	<img src="https://lh3.googleusercontent.com/8IwwW8s3i0RPilwK07mPG9guqBZ3lrgJP_OnL1wrFUD-w4l6w0535FuCvhOlQhbuy4GVzg=s170" align="middle" style="width:230px;height:65px;" >
-	<div style=" position: absolute; top: 60px; right: 20px;">
-		<font size= "3.5">
-			<%= link_to "Início", root_path%>&nbsp;&nbsp;
-			<%= link_to "Acessar conta" %>&nbsp;&nbsp;
-			<%= link_to "Cadastre-se", new_user_path%>
-		</font>
-	</div>
+	<% if logged_in? %>
+	<div style=" position: absolute; top: 60px; right: 20px; ">
+			<font color="white" size= "3.5">
+				
+				<%= link_to "Início", root_path, {style: "color: white"}%>&nbsp;&nbsp;
+				<%= link_to "Conta", root_path, {style: "color: white"}%>&nbsp;&nbsp;
+				<%= link_to "Desconectar", logout_path, method: :delete %>
+			</font>
+		</div>
+	<% else %>
+		<div style=" position: absolute; top: 60px; right: 20px;">
+			<font size= "3.5">
+				<%= link_to "Início", root_path, {style: "color: white"}%>&nbsp;&nbsp;
+				<%= link_to "Acessar conta", login_path, {style: "color: white"}%>&nbsp;&nbsp;
+				<%= link_to "Cadastre-se", new_user_path, {style: "color: white"}%>
+			</font>
+		</div>
+	<% end %>
 </div>
-
-<font color="white" font size= "3.5"><%= yield %></font><
+<center>
+<font color="white" font size= "3.5"><%= yield %></font></center>
 
 </body>
 </html>
+
+
