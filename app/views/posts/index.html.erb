@@ -14,7 +14,8 @@
     </div>
   </div>
 <% end %>
-
+<% if logged_in? %>
 <div style ="clear: both;">
   <%= link_to 'Novo Projeto', new_post_path, {style: "color: white"} %>
 </div>
+<% end %>
