@@ -20,7 +20,7 @@
 			<font size= "3.5">
 				
 				<%= link_to "Início", root_path, {style: "color: white"}%>&nbsp;&nbsp;
-				<%= link_to "Conta", root_path, {style: "color: white"}%>&nbsp;&nbsp;
+				<%= link_to "Conta", current_user, {style: "color: white"}%>&nbsp;&nbsp;
 				<%= link_to "Desconectar", logout_path, method: :delete  %>
 			</font>
 		</div>
@@ -35,7 +35,7 @@
 	<% end %>
 </div>
 <center>
-<font color="white" font size= "3.5"><%= yield %></font></center>
+<font color = "white" font size= "3.5"><%= yield %></font></center>
 
 </body>
 </html>
