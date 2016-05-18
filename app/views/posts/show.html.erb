@@ -1,17 +1,19 @@
 <% provide(:title, @post.name) %>
 <p id="notice"><%= notice %></p> 
 <p>
-  <strong>Nome:</strong>
-  <%= @post.name %>
+  <h3><strong>Nome:</strong></h3>
+  <h5><%= @post.name %></h5>
 </p>
-
+<br>
 <p>
-  <strong>Descrição:</strong>
-  <%= @post.description %>
+  <h3><strong>Descrição:</strong></h3>
+  <h5><%= @post.description %></h5>
 </p>
+<br>
 <p>
-  <strong>Detalhes:</strong>
-  <%= @post.detail %>
+  <h3><strong>Detalhes:</strong></h3>
+  <h5><%= @post.detail %></h5>
 </p>
+<br>
 <%= link_to 'Editar', edit_post_path(@post), {style: "color: white"} %> |
 <%= link_to 'Voltar', posts_path, {style: "color: white"} %>

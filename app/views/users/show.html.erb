@@ -1,5 +1,19 @@
 <% provide(:title, @user.name) %>
-	  <h1>
+	  <h2>
 	    <%= gravatar_for @user %>
-	    <%= @user.name %>
-	  </h1>
+	    <%= @user.name %></h2><br>
+	    <h1>Projetos:</h1>
+	  	<% @posts.each do |post| %>
+	  	
+  <div style="margin: 1em; border: 1px solid white;	clear: both; width: 300px; height: 300px; position: relative;">
+    <h2><%= link_to post.name, post, {style: "color: white"} %></h2>
+    <%= post.description %> <br>
+    <div style="position: relative; top: 200px;">
+      <%= link_to 'Editar', edit_post_path(post), {style: "color: white"} %>
+      <%= link_to 'Deletar', post, method: :delete, data: { confirm: 'Está certo disso?' } %>
+    </div>
+  </div>
+<% end %>
+<br>
+<%= link_to "Poste um novo projeto!", new_post_path%>
+	  
