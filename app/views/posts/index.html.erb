@@ -2,6 +2,13 @@
 
 <p id="notice"><%= notice %></p>
 
+<div style=" top: 140px; right: 60px; position: absolute;">
+<%= form_tag "posts/search" do %>
+  <%= text_field_tag :name %>
+  <%= submit_tag "Procurar" %>
+<% end %>
+</div>
+<br>
 <h1>Projetos</h1>
 
 <% @posts.each do |post| %>

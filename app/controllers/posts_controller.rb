@@ -5,6 +5,11 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def search
+    @posts = Post.where("name LIKE ?", "%#{params[:name]}%")
+    render template: 'posts/index' 
+  end  
+
   def show
   end
 
