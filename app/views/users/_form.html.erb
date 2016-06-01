@@ -1,15 +1,7 @@
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> Esta conta não pode ser criada:</h2>
+    
 
-      <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <div class="field">
     <%= f.label "Usuário" %><br>
@@ -31,3 +23,13 @@
     <%= f.submit "Pronto" %>
   </div>
 <% end %>
+
+<div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "erro") %> . Esta conta não pôde ser criada:</h2>
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
