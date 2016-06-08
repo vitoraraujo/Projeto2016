@@ -10,7 +10,7 @@
 	<br>
 	<div>
 		
-		<span class="postDesc"><%= @post.description %>
+		<span class="postShowDesc"><%= @post.description %>
 
 	</div>
 	<br>
@@ -18,11 +18,11 @@
 		<br>
 		<p>
 		<h3><strong>Detalhes:</strong></h3>
-		<span class="postDet"><%= @post.detail %>
+		<span class="postShowDet"><%= @post.detail %>
 		</p>
 	</div>	
 </div>
 <br>
 
-<%= link_to 'Editar', edit_post_path(@post), {style: "color: white"} %> |
+<%= link_to 'Editar', edit_post_path(@post), {style: "color: white"} %>
 <%= link_to 'Voltar', posts_path, {style: "color: white"} %>
