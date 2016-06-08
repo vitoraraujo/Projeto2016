@@ -16,26 +16,22 @@
 	<img src="/assets/atomo.png" align="middle" width="100px" height="100px">&nbsp;&nbsp;
 	<img src="/assets/projetop.png" align="middle" width="250px" height="70px">
 	<% if logged_in? %>
-	<div style=" position: absolute; top: 75px; right: 20px; ">
-			<font size= "3.5">
-				
-				<%= link_to "Início", root_path, {style: "color: white"}%>&nbsp;&nbsp;
-				<%= link_to "Conta", current_user, {style: "color: white"}%>&nbsp;&nbsp;
-				<%= link_to "Desconectar", logout_path, method: :delete  %>
-			</font>
+		<div class="navBar">				
+			<%= link_to "Início", root_path, {style: "color: white"}%>&nbsp;&nbsp;
+			<%= link_to "Conta", current_user, {style: "color: white"}%>&nbsp;&nbsp;
+			<%= link_to "Desconectar", logout_path, method: :delete  %>
 		</div>
 	<% else %>
-		<div style=" position: absolute; top: 75px; right: 20px;">
-			<font size= "3.5">
-				<%= link_to "Início", root_path, {style: "color: white"}%>&nbsp;&nbsp;
-				<%= link_to "Acessar conta", login_path, {style: "color: white"}%>&nbsp;&nbsp;
-				<%= link_to "Cadastre-se", new_user_path, {style: "color: white"}%>
-			</font>
+		<div class="navBar">
+			<%= link_to "Início", root_path, {style: "color: white"}%>&nbsp;&nbsp;
+			<%= link_to "Acessar conta", login_path, {style: "color: white"}%>&nbsp;&nbsp;
+			<%= link_to "Cadastre-se", new_user_path, {style: "color: white"}%>
 		</div>
 	<% end %>
 </div>
 <center>
-<font color = "white" font size= "3.5"><%= yield %></font></center>
+<span class="yield"><%= yield %>
+</center>
 
 </body>
 </html>
