@@ -12,16 +12,15 @@
 </div>
 <br>
 <h1>Projetos</h1>
-
+<div class="projects">
 <% @posts.each do |post| %>
-  <div style="margin: 1em; border: 1px solid white; float: left; width: 300px; height: 300px; position: relative;">
+  <div class="project">
     <p>
     <div class="postIndexTitle">
       <%= link_to post.name, post %>
     </div><br>
     </p>
-    <span class="postIndexDesc">
-      <%= post.description %> <br>
+    <span class="postIndexDesc"><%= post.description %></span> <br>
     <% if post.user == current_user %>
       <div style="position: absolute; top:90%; left: 34%"> 
         <%= link_to 'Editar', edit_post_path(post), {style: "color: white"} %>
@@ -30,6 +29,7 @@
    	<% end %>
   </div>
 <% end %>
+</div>
 <% if logged_in? %>
   <div style ="clear: both;">
     <%= link_to 'Novo Projeto', new_post_path, {style: "color: white"} %>

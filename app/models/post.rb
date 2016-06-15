@@ -3,6 +3,7 @@ class Post < ActiveRecord::Base
     default_scope -> { order(created_at: :desc) }
 	validates :name, presence: true, length: { maximum: 30 }, uniqueness: true
 	validates :description, presence: true, length: { maximum: 250 }
-	validates :detail, presence: true
 	validates :user_id, presence: true
+	has_many :materials, dependent: :destroy
+	has_many :steps, dependent: :destroy
 end
