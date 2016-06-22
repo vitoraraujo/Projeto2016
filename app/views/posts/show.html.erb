@@ -1,28 +1,20 @@
 <% provide(:title, @post.name) %>
 
-<div style="position: relative; margin-top: 50px; border: 2px solid white; width: 70%">
-	<div style=" left: 50px; position: absolute; float: center;">
+<div style="position: relative; margin-top: 50px; border: 2px solid white; width: 70%; clear: both;">
+	<div style=" left: 50px;">
 		<p>
 		<h2><%= @post.name %></h5>
 		</p>
 
 	</div >
 	<br>
-	<div>
-		
-		<span class="postShowDesc"><%= @post.description %>
-
+	<div class="postShowDesc">
+		<%= @post.description %>
 	</div>
 	<br>
-	<div >
-		<br>
-		<p>
-		<h3><strong>Detalhes:</strong></h3>
-		<span class="postShowDet"><%= @post.detail %>
-		</p>
-	</div>	
 </div>
 <br>
-
+<div id="links" style="position: relative; clear: both; ">
 <%= link_to 'Editar', edit_post_path(@post), {style: "color: white"} %>
-<%= link_to 'Voltar', posts_path, {style: "color: white"} %>
+<%= link_to 'Voltar', posts_path, {style: "color: white"} %> 
+</div>
