@@ -3,6 +3,8 @@
 <head>
     <title><%= yield(:title) %> | Projetos </title>
 
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+
    <STYLE type="text/css">
   	BODY {text-align: center}
   </STYLE>
@@ -12,11 +14,11 @@
  
 </head>
 <body background="/assets/fundo.jpg" >
-<div style ="border: 2px solid white; background-color: gray; position: relative; height: 100px;">
+<div style ="border: 2px solid white; background-color: gray; position: relative; height: 100px; margin: 12px;">
 	<img src="/assets/atomo.png" align="middle" width="100px" height="100px">&nbsp;&nbsp;
 	<img src="/assets/projetop.png" align="middle" width="250px" height="70px">
 	<% if logged_in? %>
-		<div class="navBar">				
+		<div class="navBar" >				
 			<%= link_to "Início", root_path, {style: "color: white"}%>&nbsp;&nbsp;
 			<%= link_to "Conta", current_user, {style: "color: white"}%>&nbsp;&nbsp;
 			<%= link_to "Desconectar", logout_path, method: :delete  %>
@@ -29,11 +31,13 @@
 		</div>
 	<% end %>
 </div>
+
 <center>
 <span class="yield"><%= yield %></span>
 </center>
 
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 </html>
 
 

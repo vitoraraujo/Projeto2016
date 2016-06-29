@@ -1,24 +1,27 @@
 <%= form_for(@user) do |f| %>
-  
-  <div class="field">
-    <%= f.label "Usuário" %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label "E-mail" %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label "Senha" %><br>
-    <%= f.password_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label "Confirmação da senha" %><br>
-    <%= f.password_field :password_confirmation %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Pronto" %>
-  </div>
+
+  <div class="row">
+    <div class="container" >
+      <%= f.label "Usuário:", { class: "formStuff" } %><br>
+      <%= f.text_field :name %>
+    </div>
+    <div class="container" >
+      <%= f.label "E-mail:", { class: "formStuff" } %><br><br>
+      <%= f.email_field :email %>
+    </div>
+    <div class="container" >
+      <%= f.label "Senha:", { class: "formStuff" } %><br><br>
+      <%= f.password_field :password %>
+    </div>
+    <div class="container" >
+      <%= f.label "Confirmação da senha:", { class: "formStuff" } %><br><br>
+      <%= f.password_field :password_confirmation %>
+    </div><br>
+    <div class="actions">
+      <%= f.submit "Pronto", { :class=>"waves-effect waves-light btn" } %>
+    </div>
+  </div>   
+
 
 <% end %>
 

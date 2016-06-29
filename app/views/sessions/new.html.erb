@@ -2,24 +2,21 @@
 <h1>Acesse sua conta</h1>
 
   <%= form_for(:session, url: login_path) do |f| %>
-    
-    <div class="field">  
-      <%= f.label "E-mail" %><br>
-      <%= f.email_field :email %>
-    </div>
-    <div class="field">
-      <%= f.label "Senha" %><br>
-      <%= f.password_field :password %>
-    </div>
-    <div class="field">
-      <%= f.label "Lembrar-me", class: "checkbox inline" do %>
-        <%= f.check_box :remember_me %>
-        <span>Lembrar-me</span><br>
-      <% end %>
 
-
-      <br><%= f.submit "Acessar" %>
-    <% end %>
+    <div class="row">
+      <div class="container" >
+        <%= f.label "E-mail:", { class: "formStuff" } %><br>
+        <%= f.email_field :email %>
+      </div>
+      <div class="container" >
+        <%= f.label "Senha:", { class: "formStuff" } %><br><br>
+        <%= f.password_field :password %>
+      </div>
     </div>
+  
+  <br>
+  <%= f.submit "Acessar", { :class=>"waves-effect waves-light btn" } %>
+<% end %>
+
 
  

@@ -7,7 +7,7 @@
   <%= form_tag "/posts/search" do %>
   Pesquisa:
   <%= text_field_tag :name %>
-  <%= submit_tag "Procurar" %>
+  <%= submit_tag "Procurar", { :class=>"waves-effect waves-light btn" }%>
 <% end %>
 </div>
 <br>
@@ -23,7 +23,7 @@
     <span class="postIndexDesc"><%= post.description %></span> <br>
     <% if post.user == current_user %>
       <div style="position: absolute; top:90%; left: 34%"> 
-        <%= link_to 'Editar', edit_post_path(post), {style: "color: white"} %>
+        <%= link_to 'Editar', edit_post_path(post) %>
         <%= link_to 'Deletar', post, method: :delete, data: { confirm: 'Está certo disso?' } %>
       </div>
    	<% end %>
@@ -32,6 +32,6 @@
 </div>
 <% if logged_in? %>
   <div style ="clear: both;">
-    <%= link_to 'Novo Projeto', new_post_path, {style: "color: white"} %>
+    <%= link_to 'Novo Projeto', new_post_path, { :class=>"waves-effect waves-light btn" } %>
   </div>
 <% end %>

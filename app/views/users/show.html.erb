@@ -2,10 +2,10 @@
     <h2>
 	  <%= gravatar_for @user %>
     <%= @user.name %></h2><br>
-	  <h1>Projetos:</h1>
-    <div class="userProjects">
+    <h1>Projetos:</h1>
+    <div class="projects">
   	  <% @posts.each do |post| %>
-        <div class="userProject">
+        <div class="project">
           <p>
           <div class="postIndexTitle">
             <%= link_to post.name, post %>
@@ -20,5 +20,6 @@
       <% end %>
       <br>
     </div>
-<%= link_to "Poste um novo projeto!", new_post_path%>
+    <br>
+<%= link_to "Poste um novo projeto!", new_post_path , { :class=>"waves-effect waves-light btn" }%>
 	  
