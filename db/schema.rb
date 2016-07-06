@@ -11,13 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160622142632) do
+ActiveRecord::Schema.define(version: 20160706140738) do
 
   create_table "components", id: false, force: :cascade do |t|
     t.integer "post_id",     null: false
     t.integer "resource_id", null: false
     t.integer "quantity"
   end
+
+  add_index "components", ["post_id", "resource_id"], name: "index_components_on_post_id_and_resource_id"
 
   create_table "posts", force: :cascade do |t|
     t.string   "name"
