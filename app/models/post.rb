@@ -5,6 +5,7 @@ class Post < ActiveRecord::Base
 	validates :description, presence: true, length: { maximum: 250 }
 	validates :user_id, presence: true
 	has_many :steps, dependent: :destroy
-	has_many :components, dependent: :destroy
+	has_many :components, dependent: :destroy,
+						  foreign_key: :post_id
 	has_many :resources, through: :components
 end

@@ -20,6 +20,22 @@ class PostsController < ApplicationController
   def edit
   end
 
+  def newResource
+    params = component_params
+    resources = Resource.where(name: params[:name])
+
+    if resources.count > 0
+      resource = resources.first
+    else
+      resource = Resource.create(resource_params) 
+    end
+    @post.components.create(resource: resource, quantity: params[:quantity])
+  end
+
+  def newStep
+    @post.step.create(step_params)
+  end
+
   def create
     @post = Post.new(post_params)
     @post.user = current_user
@@ -47,6 +63,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @post.components.clear
     @post.destroy
     respond_to do |format|
       format.html { redirect_to posts_url, notice: 'Projeto foi deletado.' }
@@ -61,5 +78,17 @@ class PostsController < ApplicationController
 
     def post_params
       params.require(:post).permit(:name, :description)
+    end
+
+    def component_params
+      params.require(:component).permit(:name, :quantity)
+    end
+
+    def resource_params
+      params.require(:component).permit(:name)
+    end
+
+    def step_params
+      params.require(:step).permit(:step)
     end
 end
