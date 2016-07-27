@@ -23,7 +23,7 @@
 
 .yield{
 	font-size: 16px;
-	color: white;
+	color: black;
 }
 
 .projects{
@@ -34,21 +34,21 @@
 
 .projects div.project{
 	margin: 1em; 
-	border: 1px solid white;
+	border: 1px solid black;
 	width: 300px;
 	height: 300px;
 	position: relative;
 }
 
 .postIndexTitle{
-	color: white;
+	color: black;
 	font-size: 25px;
 	font-weight: bold;
 	line-height: 1.2em;
 }
 .postIndexDesc{
 	width: 90%;
-	color: white;
+	color: black;
 	margin: 5%;
 	display: block;
 }
@@ -59,6 +59,6 @@ form #post_description{
 }
 
 .formStuff{
-	color: white;
+	color: black;
 	font-size: 1.5rem;
 }
