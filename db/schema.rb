@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160706140738) do
+ActiveRecord::Schema.define(version: 20160824141809) do
 
   create_table "components", id: false, force: :cascade do |t|
     t.integer "post_id",     null: false
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20160706140738) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "user_id"
+    t.text     "details"
   end
 
   add_index "posts", ["name"], name: "index_posts_on_name", unique: true

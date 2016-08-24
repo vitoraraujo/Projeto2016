@@ -62,3 +62,8 @@ form #post_description{
 	color: black;
 	font-size: 1.5rem;
 }
+
+#post_details{
+	width: 100%;
+	height: 10em;
+}

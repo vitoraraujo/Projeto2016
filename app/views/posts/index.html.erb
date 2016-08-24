@@ -7,7 +7,7 @@
   <%= form_tag "/posts/search" do %>
   Pesquisa:
   <%= text_field_tag :name %>
-  <%= submit_tag "Procurar", { :class=>"waves-effect waves-light btn" }%>
+  <%= submit_tag "Procurar", { :class=>"btn waves-effect waves-light orange" }%>
 <% end %>
 </div>
 <br>
@@ -32,6 +32,6 @@
 </div>
 <% if logged_in? %>
   <div style ="clear: both;">
-    <%= link_to 'Novo Projeto', new_post_path, { :class=>"waves-effect waves-light btn" } %>
+    <%= link_to 'Novo Projeto', new_post_path, { :class=>"btn waves-effect waves-light orange" } %>
   </div>
 <% end %>

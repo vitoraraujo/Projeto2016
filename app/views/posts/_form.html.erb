@@ -8,27 +8,28 @@
         <li><%= message %></li>
       <% end %>
       </ul>
+
     </div>
   <% end %>
 
-  <div class="row">
+  <div style="width: 70%">
     <div class="container" >
       <%= f.label "nome", { class: "formStuff" } %><br>
       <%= f.text_field :name %>
     </div>
+    <br>
     <div class="container" >
       <%= f.label "descrição", { class: "formStuff" } %><br><br>
       <%= f.text_area :description %>
     </div>
     <br>
-
-
-
-
-
-    <div class="actions">
-      <%= f.submit "Pronto", { :class=>"waves-effect waves-light btn" } %>
+    <div class="container" >
+      <%= f.label "Detalhes", { class: "formStuff" } %><br><br>
+      <%= f.text_area :details %>
     </div>
-
+    <br>
+    <div class="actions">
+      <%= f.submit "Pronto", { :class=>"btn waves-effect waves-light orange" } %>
+    </div>
   </div>        
 <% end %>

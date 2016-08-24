@@ -14,27 +14,27 @@
  
 </head>
 <body background="/assets/fundo2.jpg" >
-<div style ="border: 2px solid white; background-color: #FFAA00; position: relative; height: 100px; margin: 12px;">
-	<img src="/assets/atomo.png" align="middle" width="100px" height="100px">&nbsp;&nbsp;
-	<img src="/assets/projetop.png" align="middle" width="250px" height="70px">
-	<% if logged_in? %>
-		<div class="navBar" >				
-			<%= link_to "Início", root_path, {style: "color: white"}%>&nbsp;&nbsp;
-			<%= link_to "Conta", current_user, {style: "color: white"}%>&nbsp;&nbsp;
-			<%= link_to "Desconectar", logout_path, method: :delete  %>
-		</div>
-	<% else %>
-		<div class="navBar">
-			<%= link_to "Início", root_path, {style: "color: white"}%>&nbsp;&nbsp;
-			<%= link_to "Acessar conta", login_path, {style: "color: white"}%>&nbsp;&nbsp;
-			<%= link_to "Cadastre-se", new_user_path, {style: "color: white"}%>
-		</div>
-	<% end %>
-</div>
+	<div style ="border: 2px solid white; background-color: #FFAA00; position: relative; height: 100px; margin: 12px;">
+		<img src="/assets/atomo.png" align="middle" width="100px" height="100px">&nbsp;&nbsp;
+		<img src="/assets/projetop.png" align="middle" width="250px" height="70px">
+		<% if logged_in? %>
+			<div class="navBar" >				
+				<%= link_to "Início", root_path, {style: "color: white"}%>&nbsp;&nbsp;
+				<%= link_to "Conta", current_user, {style: "color: white"}%>&nbsp;&nbsp;
+				<%= link_to "Desconectar", logout_path, method: :delete  %>
+			</div>
+		<% else %>
+			<div class="navBar">
+				<%= link_to "Início", root_path, {style: "color: white"}%>&nbsp;&nbsp;
+				<%= link_to "Acessar conta", login_path, {style: "color: white"}%>&nbsp;&nbsp;
+				<%= link_to "Cadastre-se", new_user_path, {style: "color: white"}%>
+			</div>
+		<% end %>
+	</div>
 
-<center>
-<span class="yield"><%= yield %></span>
-</center>
+	<center>
+		<span class="yield"><%= yield %></span>
+	</center>
 
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
