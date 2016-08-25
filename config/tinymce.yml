@@ -1,0 +1,7 @@
+toolbar:
+  - styleselect | bold italic | undo redo | bullist numlist
+  - image | link
+plugins:
+  - image
+  - link
+elementpath: false

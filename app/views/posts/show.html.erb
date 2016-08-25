@@ -20,7 +20,7 @@
 <br>
 <div id="links" style="position: relative; clear: both; ">
 	<% if @post.user == current_user %>
-		<%= link_to 'Editar', edit_post_path(@post) %>
+		<%= link_to 'Editar', edit_post_path(@post) %>&nbsp;
 	<% end %>		
 	<%= link_to 'Voltar', posts_path %> 
 </div>

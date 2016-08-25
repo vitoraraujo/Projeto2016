@@ -23,7 +23,7 @@
     <span class="postIndexDesc"><%= post.description %></span> <br>
     <% if post.user == current_user %>
       <div style="position: absolute; top:90%; left: 34%"> 
-        <%= link_to 'Editar', edit_post_path(post) %>
+        <%= link_to 'Editar', edit_post_path(post) %> &nbsp;
         <%= link_to 'Deletar', post, method: :delete, data: { confirm: 'Está certo disso?' } %>
       </div>
    	<% end %>
