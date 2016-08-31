@@ -1,17 +1,9 @@
 <% provide(:title, "Listando") %>
 
 <p id="notice"><%= notice %></p>
-
-<div style=" top: 140px; right: 60px; position: absolute;">
-  
-  <%= form_tag "/posts/search" do %>
-  Pesquisa:
-  <%= text_field_tag :name %>
-  <%= submit_tag "Procurar", { :class=>"btn waves-effect waves-light orange" }%>
-<% end %>
-</div>
 <br>
-<h1>Projetos</h1>
+<h1 style=" text-color: white;">Projetos</h1>
+
 <div class="projects">
 <% @posts.each do |post| %>
   <div class="project">

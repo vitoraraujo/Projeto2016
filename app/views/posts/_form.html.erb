@@ -13,19 +13,20 @@
   <% end %>
 
   <div style="width: 70%">
-    <div style="width: 30%;" >
+    <div class="conteiner" style="width: 30%;" >
       <%= f.label "nome", { class: "formStuff" } %><br>
       <%= f.text_field :name %>
     </div>
     <br>
-    <div class="container" >
+    <div class="conteiner" >
       <%= f.label "descrição", { class: "formStuff" } %><br><br>
       <%= f.text_area :description %>
     </div>
     <br>
+    <br>
     <div class="container" >
       <%= f.label "Detalhes", { class: "formStuff" } %><br><br>
-      <%= f.text_area :details, :class => "tinymce", :rows => 40, :cols => 120 %>
+      <%= f.text_area :details, :class => "tinymce ", :rows => 40, :cols => 120 %>
     </div>
     <br>
     <div class="actions">

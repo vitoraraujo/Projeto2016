@@ -1,6 +1,24 @@
 <% provide(:title, "Início") %>
-<br><h2>Bem-vindos ao site dos projetos!</h2>
+<br>
+<div style=" border: solid white; background-color: rgba(255,165,0,0.8); width: 60%; height: 100%; ">
+<h2>Bem-vindos ao site dos projetos!</h2>
 <br><h5>Aqui você pode expor os seus, ver e fazer outros!</h5>
-<br><img src="http://cdn.grid.fotosearch.com/CSP/CSP506/k5064231.jpg"></br>
+<br>
+<p>
+
+<div style="width: 50%;">
+  
+  <%= form_tag "/posts/search" do %>
+  <h5>Pesquise: </h5>
+  <%= text_field_tag :name %>
+  <%= submit_tag "Procurar", { :class=>"btn waves-effect waves orange" }%>
+<% end %>
+</div>
+</p>
+<br>
 <br>
 <%= link_to "Veja os projetos!", posts_path, { :class=>"btn waves-effect waves-light orange" } %>
+<br>
+<br>
+</div>
+

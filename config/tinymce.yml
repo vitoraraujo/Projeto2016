@@ -5,3 +5,6 @@ plugins:
   - image
   - link
 elementpath: false
+
+apply_source_formatting: true
+entity_encoding: named
