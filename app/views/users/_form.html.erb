@@ -1,28 +1,26 @@
 <%= form_for(@user) do |f| %>
 
-  <div class="row">
+  <div class="row" style="width: 80%;">
     <div class="container" >
-      <%= f.label "Usuário:", { class: "formStuff" } %><br>
+      <%= f.label "Usuário:", { class: "formStuff" } %>
       <%= f.text_field :name %>
-    </div>
+    </div><br>
     <div class="container" >
-      <%= f.label "E-mail:", { class: "formStuff" } %><br><br>
+      <%= f.label "E-mail:", { class: "formStuff" } %>
       <%= f.email_field :email %>
-    </div>
+    </div><br>
     <div class="container" >
-      <%= f.label "Senha:", { class: "formStuff" } %><br><br>
+      <%= f.label "Senha:", { class: "formStuff" } %>
       <%= f.password_field :password %>
-    </div>
+    </div><br>
     <div class="container" >
-      <%= f.label "Confirmação da senha:", { class: "formStuff" } %><br><br>
+      <%= f.label "Confirmação da senha:", { class: "formStuff" } %>
       <%= f.password_field :password_confirmation %>
     </div><br>
     <div class="actions">
       <%= f.submit "Pronto", { :class=>"btn waves-effect waves-light orange" } %>
     </div>
   </div>   
-
-
 <% end %>
 
 <% if @user.errors.any? %>

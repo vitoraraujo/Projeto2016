@@ -1,9 +1,12 @@
 <% provide(:title, "Acessando conta") %>
+
+<div style=" border: solid white; background-color: rgba(255,165,0,0.8); width: 30%; height: 100%; ">
+
 <h1>Acesse sua conta</h1>
 
   <%= form_for(:session, url: login_path) do |f| %>
 
-    <div style ="width: 30%;">
+    <div style ="width: 80%;">
       <div class="container" >
         <%= f.label "E-mail:", { class: "formStuff" } %><br>
         <%= f.email_field :email %>
@@ -17,6 +20,7 @@
   <br>
   <%= f.submit "Acessar", { :class=>"btn waves-effect waves-light orange" } %>
 <% end %>
-
+<br>
+</div>
 
  

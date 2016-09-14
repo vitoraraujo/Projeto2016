@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :checkUser, only: [:edit, :update, :destroy]
 
   def index
     @posts = Post.all
@@ -68,6 +69,12 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to posts_url, notice: 'Projeto foi deletado.' }
       format.json { head :no_content }
+    end
+  end
+
+  def checkUser
+    if @post.user != current_user
+      redirect_to @post
     end
   end
   

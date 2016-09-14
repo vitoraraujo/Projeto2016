@@ -3,27 +3,31 @@
 <p id="notice"><%= notice %></p>
 <br>
 <h1 style=" text-color: white;">Projetos</h1>
-
-<div class="projects">
-<% @posts.each do |post| %>
-  <div class="project">
-    <p>
-    <div class="postIndexTitle">
-      <%= link_to post.name, post %>
-    </div><br>
-    </p>
-    <span class="postIndexDesc"><%= post.description %></span> <br>
-    <% if post.user == current_user %>
-      <div style="position: absolute; top:90%; left: 34%"> 
-        <%= link_to 'Editar', edit_post_path(post) %> &nbsp;
-        <%= link_to 'Deletar', post, method: :delete, data: { confirm: 'Está certo disso?' } %>
-      </div>
-   	<% end %>
+<%if @posts.count == 0 %>
+  <br><br>
+  <h4>Nenhum projeto encontrado...</h4>
+<%else%>
+  <div class="projects">
+  <% @posts.each do |post| %>
+    <div class="project">
+      <p>
+      <div class="postIndexTitle">
+        <%= link_to post.name, post %>
+      </div><br>
+      </p>
+      <span class="postIndexDesc"><%= post.description %></span> <br>
+      <% if post.user == current_user %>
+        <div style="position: absolute; top:90%; left: 34%"> 
+          <%= link_to 'Editar', edit_post_path(post) %> &nbsp;
+          <%= link_to 'Deletar', post, method: :delete, data: { confirm: 'Está certo disso?' } %>
+        </div>
+     	<% end %>
+    </div>
+  <% end %>
   </div>
-<% end %>
-</div>
-<% if logged_in? %>
-  <div style ="clear: both;">
-    <%= link_to 'Novo Projeto', new_post_path, { :class=>"btn waves-effect waves-light orange" } %>
-  </div>
-<% end %>
+  <% if logged_in? %>
+    <div style ="clear: both;">
+      <%= link_to 'Novo Projeto', new_post_path, { :class=>"btn waves-effect waves-light orange" } %>
+    </div>
+  <% end %>
+<%end%>

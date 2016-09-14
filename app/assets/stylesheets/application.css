@@ -69,3 +69,10 @@ form #post_description{
 	width: 100%;
 	height: 10em;
 }
+
+.postShowDetail ul li{
+	list-style-type: disc;
+}
+.postShowDetail p, .postShowDetail ol, .postShowDetail ul, .postShowDetail td {
+	font-size: 16px;
+}

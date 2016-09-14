@@ -13,7 +13,9 @@
 	</div>
 	<br>
 	<div class="postShowDetail">
-		<%= @post.details %>
+		<% if @post.details.present? %>
+			<%= @post.details.html_safe %>
+		<% end %>
 	</div>
 	<br>
 </div>
