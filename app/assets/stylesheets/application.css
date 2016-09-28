@@ -72,7 +72,11 @@ form #post_description{
 
 .postShowDetail ul li{
 	list-style-type: disc;
+	text-align: left;
+	margin-left: 3.5%;
 }
 .postShowDetail p, .postShowDetail ol, .postShowDetail ul, .postShowDetail td {
-	font-size: 16px;
+	font-size: 18px;
+	text-align: left;
+	margin-left: 5%;
 }
