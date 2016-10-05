@@ -4,7 +4,12 @@
     <%= @user.name %></h2><br>
     <h1>Projetos:</h1>
     <div class="projects">
-  	  <% @posts.each do |post| %>
+      <%if @user.posts.count == 0 %>
+      <br><br>
+      <h4>Nenhum projeto encontrado...</h4>
+      <br><br>
+    	<%else%>
+        <% @posts.each do |post| %>
         <div class="project">
           <p>
           <div class="postIndexTitle">
@@ -17,6 +22,7 @@
             <%= link_to 'Deletar', post, method: :delete, data: { confirm: 'Está certo disso?' } %>
           </div>
         </div>
+        <% end %>
       <% end %>
       <br>
     </div>
