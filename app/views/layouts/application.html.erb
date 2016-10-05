@@ -13,10 +13,11 @@
   <%= csrf_meta_tags %>
  
 </head>
-<body background="/assets/fundo2.jpg" style="background-attachment: fixed;" >
+<body>
+	<%= image_tag "fundo2.jpg", background: "true" %>
 	<div style ="border: 2px solid white; background-color: rgba(255,165,0,0.8); position: relative; height: 100px; margin: 12px;">
-		<img src="/assets/atomo.png" align="middle" width="100px" height="100px">&nbsp;&nbsp;
-		<img src="/assets/projetop.png" align="middle" width="250px" height="70px">
+		<%= image_tag "atomo.png", align: "middle", size: "100x100" %>&nbsp;&nbsp;
+		<%= image_tag "projetop.png", align: "middle", size: "250x70" %>
 		<% if logged_in? %>
 			<div class="navBar" >				
 				<%= link_to "Início", root_path, {style: "color: white"}%>&nbsp;&nbsp;
