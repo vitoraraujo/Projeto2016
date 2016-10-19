@@ -27,3 +27,31 @@
 	<%= link_to 'Voltar', posts_path %> 
 </div>
 
+<div>
+	<h4> Comentários: </h4>
+	<div class="postComments" >
+		<% @post.comments.each do |comment| %>
+			<div class="postComment" >
+				<br>
+				<div style=" margin-left: 30px;">
+					<b><%= comment.user.name %>:</b>
+				</div>
+				<br>
+				<div class="comment">
+					<%= comment.comment %> 
+				</div>
+				<br>
+			</div>
+			
+		<% end %>
+	 </div>
+	 <div class="commentLabel">
+		<%= form_for ([@post, @post.comments.build]) do |f| %>
+        	<%= f.text_area :comment %>
+   
+    		<%= f.submit "Comentar" %>
+		<% end %>
+	</div>
+</div>
+
+

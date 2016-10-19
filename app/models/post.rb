@@ -8,5 +8,6 @@ class Post < ActiveRecord::Base
 	has_many :components, dependent: :destroy,
 						  foreign_key: :post_id
 	has_many :resources, through: :components
+	has_many :comments, dependent: :destroy
 	
 end

@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   has_secure_password
  	validates :password, presence: true, length: { maximum: 25 }, length: {minimum: 5}
   has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   class << self
    	def User.digest(string)
