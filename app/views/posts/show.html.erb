@@ -45,6 +45,7 @@
 			
 		<% end %>
 	 </div>
+	 <% if logged_in? %> 
 	 <div class="commentLabel">
 		<%= form_for ([@post, @post.comments.build]) do |f| %>
         	<%= f.text_area :comment %>
@@ -52,6 +53,7 @@
     		<%= f.submit "Comentar" %>
 		<% end %>
 	</div>
+	<% end %>
 </div>
-
+<br>
 
