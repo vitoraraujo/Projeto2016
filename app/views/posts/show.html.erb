@@ -28,31 +28,38 @@
 </div>
 
 <div>
-	<h4> Comentários: </h4>
-	<div class="postComments" >
-		<% @post.comments.each do |comment| %>
-			<div class="postComment" >
-				<br>
-				<div style=" margin-left: 30px;">
-					<b><%= comment.user.name %>:</b>
-				</div>
-				<br>
-				<div class="comment">
-					<%= comment.comment %> 
-				</div>
-				<br>
-			</div>
-			
-		<% end %>
+	<h4 style="color: white;"> Comentários: </h4>
+		<div class="postComments" >
+			<% if @post.comments.count == 0%>
+				<h5 style="border: solid white 2px;"> Nenhum comentário...</h5>
+			<% else %>
+				<% @post.comments.each do |comment| %>
+				<div class="postComment" >
+					<br>
+					<div>
+						<div>
+							<b style=" margin-left: 5%;"><%= comment.user.name %>:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<% if comment.user_id == current_user.id %>
+								<%= link_to 'Deletar', comment, method: :delete, data: { confirm: 'Está certo disso?' }%>
+							<% end %>
+						</div>
+						<div class="comment">
+							<%= comment.comment %> 
+						</div>
+						<br>
+					</div>
+				</div>	
+			<% end %>
+	 	<% end %>
 	 </div>
 	 <% if logged_in? %> 
 	 <div class="commentLabel">
 		<%= form_for ([@post, @post.comments.build]) do |f| %>
         	<%= f.text_area :comment %>
-   
     		<%= f.submit "Comentar" %>
 		<% end %>
 	</div>
+
 	<% end %>
 </div>
 <br>

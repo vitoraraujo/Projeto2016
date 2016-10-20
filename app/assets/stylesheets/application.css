@@ -17,8 +17,8 @@
 .navBar{
 	font-size: 18px;
 	position: absolute; 
-	top: 75px; 
-	right: 20px;
+	top: 75%; 
+	right: 2%;
 }
 
 .yield{
