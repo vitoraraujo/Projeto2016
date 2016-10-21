@@ -30,7 +30,7 @@
 <div>
 	<h4 style="color: white;"> Comentários: </h4>
 		<div class="postComments" >
-			<% if @post.comments.count == 0%>
+			<% if @post.comments.count == 0 %>
 				<h5 style="border: solid white 2px;"> Nenhum comentário...</h5>
 			<% else %>
 				<% @post.comments.each do |comment| %>
@@ -39,9 +39,10 @@
 					<div>
 						<div>
 							<b style=" margin-left: 5%;"><%= comment.user.name %>:</b>
-
-							<% if comment.user_id == current_user.id %>
-								<%= link_to 'Deletar', comment, method: :delete, data: { confirm: 'Está certo disso?' }%>
+							<% if logged_in? %>
+								<% if comment.user_id == current_user.id %>
+									<%= link_to 'Deletar', comment, method: :delete, data: { confirm: 'Está certo disso?' }%>
+								<% end %>
 							<% end %>
 						</div>
 						<div class="comment">
