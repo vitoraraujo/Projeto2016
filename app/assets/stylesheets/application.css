@@ -15,14 +15,14 @@
  */
 
 .navBar{
-	font-size: 18px;
+	font-size: 130%;
 	position: absolute; 
 	top: 75%; 
 	right: 2%;
 }
 
 .yield{
-	font-size: 16px;
+	font-size: 115%;
 	color: black;
 }
 
@@ -36,7 +36,7 @@
 .projects div.project{
 	margin: 1em; 
 	border: 1px solid white;
-	width: 300px;
+	width: 30%;
 	height: 300px;
 	position: relative;
 	background-color: rgba(255,165,0,0.8);
@@ -44,7 +44,7 @@
 
 .postIndexTitle{
 	font-color: black;
-	font-size: 25px;
+	font-size: 150%;
 	font-weight: bold;
 	line-height: 1.2em;
 	font-family: Font;
@@ -58,8 +58,8 @@
 }
 
 form #post_description{
-	width: 400px;
-	height: 150px;
+	width: 20%;
+	height: 15%;
 }
 
 .formStuff{
@@ -75,11 +75,11 @@ form #post_description{
 
 .postShowDetail ul li{
 	list-style-type: disc;
-text-align: left;
-margin-left: 5%;
+	text-align: left;
+	margin: 5%;
 }
 .postShowDetail p, .postShowDetail ol, .postShowDetail ul, .postShowDetail td {
-	font-size: 18px;
+	font-size: 130%;
 	margin-left: 5%;
 	text-align: left;
 }
@@ -90,13 +90,13 @@ margin-left: 5%;
 }
 
 .postComment {
-	font-size: 18px;
+	font-size: 130%;
 	border: solid white 2px;
 	text-align: left;
 }
 .comment {
 	text-align: left;
-	margin: 15px; 
+	margin: 5%; 
 }
 .commentLabel {
  	width: 70%;
