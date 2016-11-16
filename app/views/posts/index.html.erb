@@ -11,7 +11,7 @@
   <div class="projects">
   <% @posts.each do |post| %>
     <%= link_to post do %>
-    <div class="project">
+      <div class="project">
       <p>
         <div class="postIndexTitle">
           <%= post.name %>
@@ -36,5 +36,6 @@
   <% end %>
 <%end%>
 <br>
-
-<%= will_paginate @post, renderer: BootstrapPagination::Rails, previous_label: "< Anteriores", next_label: "Próximos >", inner_window: 1, outer_window: 0 %>
+<% if @posts.count >= 1 %>
+<%= will_paginate @posts, renderer: BootstrapPagination::Rails, previous_label: "< Anteriores", next_label: "Próximos >", inner_window: 1, outer_window: 0 %>
+<%end%>

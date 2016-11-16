@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   end
 
   def search
-    @posts = Post.where("name LIKE ?", "%#{params[:name]}%")
+    @posts = Post.where("name LIKE ?", "%#{params[:name]}%").paginate(page: params[:page], per_page: 3)
     render template: 'posts/index' 
   end  
 
