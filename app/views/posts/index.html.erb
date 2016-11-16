@@ -2,6 +2,7 @@
 
 <p id="notice"><%= notice %></p>
 <br>
+
 <h1 class="textProjetos">Projetos</h1>
 <%if @posts.count == 0 %>
   <br><br>
@@ -9,25 +10,31 @@
 <%else%>
   <div class="projects">
   <% @posts.each do |post| %>
+    <%= link_to post do %>
     <div class="project">
       <p>
-      <div class="postIndexTitle">
-        <%= link_to post.name, post %>
-      </div><br>
-      </p>
-      <span class="postIndexDesc"><%= post.description %></span> <br>
-      <% if post.user == current_user %>
-        <div style="position: absolute; top:90%; left: 34%"> 
-          <%= link_to 'Editar', edit_post_path(post) %> &nbsp;
-          <%= link_to 'Deletar', post, method: :delete, data: { confirm: 'Está certo disso?' } %>
-        </div>
-     	<% end %>
-    </div>
+        <div class="postIndexTitle">
+          <%= post.name %>
+        </div><br>
+        </p>
+        <span class="postIndexDesc"><%= post.description %></span> <br>
+        <% if post.user == current_user %>
+          <div style="position: absolute; top:90%; left: 34%"> 
+            <%= link_to 'Editar', edit_post_path(post) %> &nbsp;
+            <%= link_to 'Deletar', post, method: :delete, data: { confirm: 'Está certo disso?' } %>
+          </div>
+       	<% end %>
+      </div>
+    <% end %>
   <% end %>
   </div>
+
   <% if logged_in? %>
     <div style ="clear: both;">
       <%= link_to 'Novo Projeto', new_post_path, { :class=>"btn waves-effect waves-light orange" } %>
     </div>
   <% end %>
 <%end%>
+<br>
+
+<%= will_paginate @post, renderer: BootstrapPagination::Rails, previous_label: "< Anteriores", next_label: "Próximos >", inner_window: 1, outer_window: 0 %>
