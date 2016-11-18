@@ -1,5 +1,4 @@
-heigth: 500
-width: 100%
+width: 60%
 
 toolbar:
   - bold italic | undo redo | bullist numlist
