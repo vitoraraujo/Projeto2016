@@ -2,11 +2,11 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :checkUser, only: [:edit, :update, :destroy]
   def index
-    @posts = Post.all.paginate(page: params[:page], per_page: 3)
+    @posts = Post.all
   end
 
   def search
-    @posts = Post.where("name LIKE ?", "%#{params[:name]}%").paginate(page: params[:page], per_page: 3)
+    @posts = Post.where("name LIKE ?", "%#{params[:name]}%")
     render template: 'posts/index' 
   end  
 
